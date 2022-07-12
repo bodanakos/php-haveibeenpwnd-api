@@ -8,10 +8,10 @@ function CheckIfPasswordIsBreached($password_input, $is_console) {
 	$password_sha1_without_prefix= substr($password_format, 5, 40);
 
 
-	$return_value = date("H:i:s") . "[INFO]: Given password: ". $password_input . "<br>";
-	$return_value .= " > Password in SHA1 with uppercase: ". $password_format . "<br>";
-	$return_value .= " > Prefix: ". $password_sha1_prefix . "<br>";
-	$return_value .= " > Password without prefix: ". $password_sha1_without_prefix . "<br>";
+	$return_value = date("H:i:s") . " [INFO]: Given password: ". $password_input . "<br>";
+	$return_value .= date("H:i:s") . " [INFO]: > Password in SHA1 with uppercase: ". $password_format . "<br>";
+	$return_value .= date("H:i:s") . " [INFO]: > Prefix: ". $password_sha1_prefix . "<br>";
+	$return_value .= date("H:i:s") . " [INFO]: > Password without prefix: ". $password_sha1_without_prefix . "<br>";
 
 	$options = stream_context_create(array('http'=>
 	    array(
