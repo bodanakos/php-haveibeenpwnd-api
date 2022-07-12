@@ -31,7 +31,7 @@ function CheckIfPasswordIsBreached($password_input, $is_console) {
 
 		if ($api_only_hash == $password_sha1_without_prefix){
 
-			$return_value .= date("H:i:s") . " [INFO]: <br>Password is breached :( <br>";
+			$return_value .= "<br>" . date("H:i:s") . " [INFO]: Password is breached :( <br>";
 			$return_value .= date("H:i:s") . " [INFO]: <a href=$url_for_api>" . $url_for_api . "</a><br>";
 			$return_value .= date("H:i:s") . " [INFO]: => " . $line . "<br><br>";
 
@@ -45,7 +45,7 @@ function CheckIfPasswordIsBreached($password_input, $is_console) {
 			return $return_value;
 		}
 	}
-	$return_value .=date("H:i:s") . " [INFO]: <br>The given password is not breached! :) <br><br>";
+	$return_value .= "<br>" . date("H:i:s") . " [INFO]: <br>The given password is not breached! :) <br><br>";
 
 	if ($is_console) {
 		$return_value = str_replace("<br>", "\n", "$return_value");
