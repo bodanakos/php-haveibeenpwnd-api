@@ -45,7 +45,7 @@ function CheckIfPasswordIsBreached($password_input, $is_console) {
 			return $return_value;
 		}
 	}
-	$return_value .= "<br>" . date("H:i:s") . " [INFO]: <br>The given password is not breached! :) <br><br>";
+	$return_value .= "<br>" . date("H:i:s") . " [INFO]: The given password is not breached! :) <br><br>";
 
 	if ($is_console) {
 		$return_value = str_replace("<br>", "\n", "$return_value");
