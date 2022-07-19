@@ -2,7 +2,7 @@
 
 function CheckIfPasswordIsBreached($password_input, $is_console) {
 	date_default_timezone_set("Europe/Budapest");
-	$current_date = date("Y-m-d") . "T" . date("H:i:s"); 
+	$current_date = date("Y-m-d") . "T" . date("H:i:s");
 	$password_format = strtoupper(sha1($password_input));
 	$password_sha1_prefix = substr($password_format, 0, 5);
 	$url_for_api = "https://api.pwnedpasswords.com/range/$password_sha1_prefix";
@@ -34,7 +34,7 @@ function CheckIfPasswordIsBreached($password_input, $is_console) {
 
 			$return_value .= "<br>" . $current_date . " [INFO]: Password is breached :( <br>";
 			$return_value .= $current_date . " [INFO]: <a href=$url_for_api>" . $url_for_api . "</a><br>";
-			$return_value .= $current_date . " [INFO]: => " . $line . "<br><br>";
+			$return_value .= $current_date . " [INFO]: => " . substr($line, 0, 35) . " Password count: ". substr($line, 36). "<br><br>";
 
 			if ($is_console) {
 				$return_value = str_replace("<br>", "\n", "$return_value");
